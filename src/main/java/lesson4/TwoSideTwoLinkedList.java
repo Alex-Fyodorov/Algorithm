@@ -10,7 +10,6 @@ public class TwoSideTwoLinkedList<T> implements TwoSideLinkedList<T>,
     protected Node<T> first;
     protected Node<T> last;
 
-
     @Override
     public T getFirst() {
         return first.value;
@@ -166,12 +165,16 @@ public class TwoSideTwoLinkedList<T> implements TwoSideLinkedList<T>,
             return false;
         }
 
+        /**
+         * Данный метод делает в точности то, что должен, выдаёт следующий
+         * элемент, но в целом forEach работает некорректно: выпадает первый
+         * элемент. Это можно увидеть в классе Main. Я голову сломал, но как
+         * это исправить так и не додумался. Надеюсь на ваши комментарии.
+         */
         @Override
         public T next() {
-            T dd = current.value;
             current = current.next;
-            return dd;
+            return current.value;
         }
     }
-
 }
