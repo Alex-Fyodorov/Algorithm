@@ -7,6 +7,10 @@ public class TreeImpl<E extends Comparable<? super E>> implements Tree<E> {
     private Node<E> root;
     private int size;
 
+    public Node<E> getRoot() {
+        return root;
+    }
+
     private class NodeAndParent {
         private Node<E> current;
         private Node<E> parent;
